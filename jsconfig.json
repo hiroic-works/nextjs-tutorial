@@ -1,0 +1,5 @@
+{
+  "compilerOptions": {
+    "baseUrl": "." // 絶対パスでインポート
+  }
+}

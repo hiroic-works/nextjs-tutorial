@@ -1,0 +1,3 @@
+{
+  "javascript.preferences.importModuleSpecifier": "non-relative" // tsconfig.jsonのbaseUrl、pathsの設定を使って絶対パスでのimportができる
+}
