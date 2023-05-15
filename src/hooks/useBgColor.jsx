@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 
 export const useBgColor = () => {
   const router = useRouter();
-  console.log(router);
 
   const bgColor = useMemo(() => {
     switch (router.pathname) {

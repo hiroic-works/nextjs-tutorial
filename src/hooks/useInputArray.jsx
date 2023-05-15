@@ -20,7 +20,7 @@ export const useInputArray = () => {
     // 本来ミュータブルな配列やオブジェクトをReactではイミュータブルに扱う必要があるため、
     // push()などを用いて元の配列を破壊的に変更する事はできず、スプレッド構文を使用して非破壊的に新しい配列として返さなければならない
     setArray((prevArray) => {
-      if (prevArray.some((item) => item === text)) {
+      if (prevArray.includes(text)) {
         alert("同じ値は入れられません");
         return prevArray;
       }

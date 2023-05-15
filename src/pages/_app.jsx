@@ -5,7 +5,7 @@ import { useInputArray } from "src/hooks/useInputArray";
 import { useBgColor } from "src/hooks/useBgColor";
 
 // ステートのリフトアップ（親で定義して各子コンポーネントに渡してステートの共通化を図る）
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   const counter = useCounter();
   const inputArray = useInputArray();
 
@@ -18,6 +18,6 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} {...counter} {...inputArray} />
     </>
   );
-}
+};
 
 export default MyApp;
