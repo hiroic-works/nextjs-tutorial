@@ -1,8 +1,14 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export const useCounter = () => {
   const [count, setCount] = useState(1);
   const [isShow, setIsShow] = useState(true);
+
+  // countのステートが変更された場合のみ再生成する
+  const doubleCount = useMemo(() => {
+    return count * 2;
+  }, [count]);
+
   const handleClick = useCallback(() => {
     if (count < 10) {
       // ※直接countにカウントを加えず、関数の引数で前のcountの値が取得できるのでそれに対してカウントを加える
@@ -19,6 +25,7 @@ export const useCounter = () => {
 
   return {
     count,
+    doubleCount,
     isShow,
     handleClick,
     handleDisplay,
